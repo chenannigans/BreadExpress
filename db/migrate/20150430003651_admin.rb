@@ -13,5 +13,6 @@ class Admin < ActiveRecord::Migration
   def down
     admin = User.find_by_username "admin@example.com"
     User.delete admin
+    #comment
   end 
 end
