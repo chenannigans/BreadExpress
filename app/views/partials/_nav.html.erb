@@ -7,6 +7,8 @@
         <% if !logged_in? %>
           <li><%= link_to "View Menu", items_path %></li>
         <% end %>
+
+
         <% if logged_in? && (current_user.role?(:admin) || current_user.role?(:customer)) %>
           <!-- options for orders -->
           <li class="has-dropdown">
@@ -27,7 +29,16 @@
           </li>
         <% end %>
 
+
+        <li class = "has-dropdown">
+          <%= link_to "Items", items_path %>
+          <li><%= link_to "My Addresses", addresses_path %></li>
+              <li><%= link_to "Add an Address", new_address_path %></li>
+       
+          </li>
+
         <!-- ADMIN ONLY OPTIONS -->
+
 
 
 

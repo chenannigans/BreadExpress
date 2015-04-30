@@ -1,0 +1,14 @@
+
+<% if @inactive_items.empty? %>
+  <h4>No inactive items at this time.</h4>
+<% else %>
+
+ 
+    <h3>Inactive Items</h3>
+    <ul>
+      <% @inactive_items.each do |item| %>
+        <li><%= link_to item.name, item_path(item) %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>

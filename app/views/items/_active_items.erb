@@ -1,0 +1,30 @@
+Available Items
+
+<% if @active_items.empty? %>
+  <h4>No active items at this time.</h4>
+<% else %>
+  <h4> Items</h4>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th width="100">Name</th>
+        <th width="50">Price</th>
+        <th width="50">Units</th>
+<!--         <th width="250">Items</th>
+        <th width="100">Cost</th> -->
+      </tr>
+    </thead>
+    <tbody>
+      <% @active_items.each do |item| %>
+        <tr>
+      
+          <td><%=link_to item.name, item_path(item) %><br /> </td>
+         
+          <td>$<%=("%.2f" % item.current_price) %></td>
+
+          <td><%=item.units_per_item %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <% end %>
