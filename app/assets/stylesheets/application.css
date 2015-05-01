@@ -11,5 +11,8 @@
  *= require_self
 
  *= require simple_form
+ 
  *= require jquery-ui
+ *= require materialize
+ *= require_tree .
  */

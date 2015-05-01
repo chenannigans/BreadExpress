@@ -9,6 +9,8 @@ gem 'coffee-rails', '4.0.1'
 gem 'jquery-rails', '3.1.0'
 # gem 'turbolinks', '2.2.1'
 gem 'jbuilder', '1.5.3'
+gem 'bundler', '>= 1.7.0' # needed for rails-assets-materialize
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
@@ -29,6 +31,9 @@ gem 'validates_timeliness', '3.0.14'
 gem 'carrierwave', '0.10.0'
 gem 'time_date_helpers', '0.0.2'
 gem 'foundation-rails'
+source 'https://rails-assets.org' do
+  gem 'rails-assets-materialize'
+end
 
 # Additional gems that are very useful in Rails development
 group :development do

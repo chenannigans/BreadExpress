@@ -1,4 +1,5 @@
 class OrdersController < ApplicationController
+  include BreadExpressHelpers::Cart
 
 
   before_action :check_login

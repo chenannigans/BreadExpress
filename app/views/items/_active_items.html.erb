@@ -19,8 +19,11 @@ Available Items
         <tr>
       
           <td><%=link_to item.name, item_path(item) %><br /> </td>
-        
-                <td><%=item.current_price%></td>
+         
+<!--          watch out for nil
+ -->          <td>$<%=("%.2f" % item.current_price) %></td>
+
+
 
          <% if (item.category == "bread") %>
                  <td>  <%= item.units_per_item.to_s + " " + "loaf" %></td>
@@ -33,4 +36,6 @@ Available Items
     </tbody>
   </table>
   <% end %>
+  <%= will_paginate @active_items, previous_label: "Previous&nbsp;", next_label: "&nbsp;Next" %>  
+
 

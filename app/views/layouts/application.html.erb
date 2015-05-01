@@ -11,9 +11,13 @@
   </head>
 
   <body>
+    <nav class = "red darken-4">
+      <div class = "nav-wrapper container">
     <div id="title_area">
-      <%= link_to image_tag('breadexpress_title.png'), home_path %>
+      <%= link_to image_tag('breadexpress_title.png'), home_path, {:class=> "brand-logo left" } %>
     </div>
+    <ul id="nav-mobile" class="right side-nav">        
+
     <%= render :partial => "partials/nav" %>
       <div id="login">
         <% if logged_in? %>
@@ -23,15 +27,17 @@
     <%= link_to 'Login', login_path %>
   <% end %>
     </div>
+  </div>
+</div>
     <div class="row">
-      <div class="small-12 columns" id="main_content">
-        <%= render :partial => "partials/flash" %>
+<!--       <div class="small-12 columns" id="main_content">
+ -->        <%= render :partial => "partials/flash" %>
         <%= yield %>
       </div>
     </div>
     <footer>
-      <div class="small-12 columns" id="footer">
-        <%= render partial: 'partials/footer' %>
+<!--       <div class="small-12 columns" id="footer">
+ -->        <%= render partial: 'partials/footer' %>
       </div>
     </footer> 
     <%= javascript_include_tag "application" %>

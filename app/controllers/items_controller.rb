@@ -5,8 +5,8 @@ class ItemsController < ApplicationController
   
   def index
     if logged_in?
-      @active_items = Item.active.alphabetical#.paginate(:page => params[:page]).per_page(10)
-      @inactive_items = Item.inactive.alphabetical#.paginate(:page => params[:page]).per_page(5)
+      @active_items = Item.active.alphabetical.paginate(:page => params[:page]).per_page(5)
+      @inactive_items = Item.inactive.alphabetical.paginate(:page => params[:page]).per_page(5)
 
 	end  
   end
