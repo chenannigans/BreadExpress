@@ -1,14 +1,40 @@
-<%= simple_form_for @item, html: { class: 'form-horizontal' } do |f| %>
+<%= simple_form_for Item.new, html: { class: 'form-horizontal' } do |f| %>
   <fieldset>
     <legend><%= controller.action_name.capitalize %> Item</legend>
+<!-- 
+    <%= f.input :name, input_html: {class: "avg"} %>
+    <%= f.input :picture, input_html: {class: "avg"} %>
 
-    <%= f.input :first_name, input_html: {class: "avg"} %>
-    <%= f.input :last_name, input_html: {class: "avg"} %>
-    <%= f.input :phone, input_html: {class: "avg"} %>
-    <%= f.input :email, input_html: {class: "avg"} %>
+    <%= f.input :description, input_html: {class: "avg"} %>
+    <%= f.input :category, input_html: {class: "avg"} %>
+    <%= f.input :units_per_item, input_html: {class: "avg"} %> -->
 
 
+    <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
 
+    <p>
+    <%= f.label :picture %><br />
+    <%= f.text_field :picture %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </p>
+  <p>
+    <%= f.label :category %><br />
+    <%= f.select :category, Item::CATEGORIES, :prompt => "Select ..." %>
+  </p>
+  <p>
+    <%= f.label :units_per_item, "Units Per Item" %><br />
+    <%= f.text_field :units_per_item %>
+  </p>
+   <p>
+    <%= f.label :weight %><br />
+    <%= f.text_field :weight%>
+  </p>
 
 
 

@@ -35,7 +35,7 @@ class ItemsController < ApplicationController
 
     if @item.save
 
-      redirect_to @item, notice: "New item created."
+      redirect_to @item, notice: "#{@item.name} was added to the system."
     else
       render action: 'new'
     end
