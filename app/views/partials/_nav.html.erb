@@ -3,6 +3,12 @@
 
 
         <li><%= link_to "Home", home_path %></li>
+
+
+
+
+        <li><%= link_to "Cart " + "(" + session[:cart].length.to_s + ")", cart_path%>
+          </li>
         
         <% if !logged_in? %>
           <li><%= link_to "View Menu", items_path %></li>

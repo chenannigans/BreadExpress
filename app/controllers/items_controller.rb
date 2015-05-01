@@ -1,7 +1,11 @@
 class ItemsController < ApplicationController
+include BreadExpressHelpers::Cart
+
  before_action :check_login
   before_action :set_item, only: [:show, :update, :destroy]
   authorize_resource
+
+  
   
   def index
     if logged_in?

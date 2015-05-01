@@ -1,3 +1,4 @@
+
 Available Items
 
 <% if @active_items.empty? %>
@@ -31,7 +32,12 @@ Available Items
                  <td>  <%= item.units_per_item.to_s + " " + item.category %></td>
                  <%end%>
 
+                    <td><%=link_to "add to cart",add_item_to_cart(item.id) %> <td> 
+
         </tr>
+
+      
+        
       <% end %>
     </tbody>
   </table>

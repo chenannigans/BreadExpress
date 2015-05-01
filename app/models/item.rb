@@ -1,4 +1,5 @@
 class Item < ActiveRecord::Base
+include BreadExpressHelpers::Cart
 
       mount_uploader :picture, PictureUploader
 

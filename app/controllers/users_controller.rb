@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+
+  include BreadExpressHelpers::Cart
+
   before_action :set_user, only: [:edit, :update]
 
   skip_before_action :check_login, only: [:new, :create]
