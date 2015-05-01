@@ -22,7 +22,14 @@ Available Items
          
           <td>$<%=("%.2f" % item.current_price) %></td>
 
-          <td><%=item.units_per_item %></td>
+
+
+         <% if (item.category == "bread") %>
+                 <td>  <%= item.units_per_item.to_s + " " + "loaf" %></td>
+              <%else%>
+                 <td>  <%= item.units_per_item.to_s + " " + item.category %></td>
+                 <%end%>
+
         </tr>
       <% end %>
     </tbody>

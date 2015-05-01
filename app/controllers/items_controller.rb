@@ -13,7 +13,13 @@ class ItemsController < ApplicationController
 
   def show
 
-    # if current_user.role?(:customer)
+  	@prices = @item.item_prices.chronological
+
+
+
+    if current_user.role?(:customer)
+      @similar_items = Item.for_category(@item.category)
+    end
     #   @items = current_user.customer.orders.chronological.to_a
     # else
     #   @previous_orders = @order.customer.orders.chronological.to_a

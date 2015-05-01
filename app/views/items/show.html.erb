@@ -8,8 +8,20 @@
   <div class="form-actions">
     <%= link_to items_path, class: 'button radius' do %>
       &nbsp;Return to My Items
+
+
     <% end %>
+
+      <%= render partial: "partials/object_options", locals: {model_name: "item", object: @item}  %>
+  <%= render partial: "similar_items" %>
   </div>
 <% else %>
-  <%= render partial: "partials/object_options", locals: {model_name: "item", object: @item}  %>
+
 <% end %>
+
+<% if logged_in? && current_user.role?(:admin) %>
+
+<%= render partial: "price_history" %>
+
+<%end%>
+

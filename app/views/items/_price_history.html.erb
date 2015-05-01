@@ -1,0 +1,19 @@
+ Price History
+	<tr>End Date</tr>
+	<tr>Price</tr>
+  
+  <% for price in @prices %>
+		</br>
+
+	<% if price.end_date == nil %>
+		<td>Current</td>
+	<%end%>
+
+  	<tr>
+	  	<td><%= price.end_date.to_s =%></td> 
+	  	<td>$<%= ("%.2f" % price.price) %></td>
+
+          </tr>
+ 
+
+          	<%end%>         
