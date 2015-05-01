@@ -19,10 +19,8 @@ Available Items
         <tr>
       
           <td><%=link_to item.name, item_path(item) %><br /> </td>
-         
-          <td>$<%=("%.2f" % item.current_price) %></td>
-
-
+        
+                <td><%=item.current_price%></td>
 
          <% if (item.category == "bread") %>
                  <td>  <%= item.units_per_item.to_s + " " + "loaf" %></td>
@@ -35,3 +33,4 @@ Available Items
     </tbody>
   </table>
   <% end %>
+

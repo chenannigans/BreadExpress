@@ -5,8 +5,8 @@ class ItemsController < ApplicationController
   
   def index
     if logged_in?
-      @active_items = Item.active.alphabetical.paginate(:page => params[:page]).per_page(5)
-      @inactive_items = Item.inactive.alphabetical.paginate(:page => params[:page]).per_page(5)
+      @active_items = Item.active.alphabetical#.paginate(:page => params[:page]).per_page(10)
+      @inactive_items = Item.inactive.alphabetical#.paginate(:page => params[:page]).per_page(5)
 
 	end  
   end
@@ -27,6 +27,7 @@ class ItemsController < ApplicationController
   end
 
   def new
+    @item = Item.new
 
   end
 
@@ -61,7 +62,7 @@ class ItemsController < ApplicationController
   end
 
   def item_params
-    params.require(:item).permit(:name, :description, :category, :weight, :active, :price, :units_per_item)
+    params.require(:item).permit(:name, :description, :picture, :category, :units_per_item, :weight, :active)
   end
 	
 
