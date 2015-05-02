@@ -1,19 +1,29 @@
- Price History
-	<tr>End Date</tr>
-	<tr>Price</tr>
+ Price History <br>
+
+  <table class = "striped">
+  	<tr>
+	<th>End Date</th>
+	<th>Price</th>
+</tr>
   
   <% for price in @prices %>
 		</br>
 
-	<% if price.end_date == nil %>
-		<td>Current</td>
-	<%end%>
+	
 
   	<tr>
+
+  		 <% if price.end_date == nil %>
+		<td>Current</td>
+	  	<td>$<%= ("%.2f" % price.price) %></td>
+	  	<%else%>
 	  	<td><%= price.end_date.to_s =%></td> 
+	  
 	  	<td>$<%= ("%.2f" % price.price) %></td>
 
+	<%end%>
           </tr>
  
 
           	<%end%>         
+          </table>
