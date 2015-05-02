@@ -5,7 +5,7 @@ include BreadExpressHelpers::Cart
   before_action :set_item, only: [:show, :update, :destroy]
   authorize_resource
 
-  
+
   
   def index
     if logged_in?
@@ -60,6 +60,17 @@ include BreadExpressHelpers::Cart
     redirect_to items_url, notice: "This item was removed from the system."
   end
 
+  def add_to_cart
+    add_item_to_cart(params[:id])
+  end
+
+  def get_list_of_items_in_cart
+      get_list_of_items_in_cart
+    end
+
+
+
+
   private
   def set_item
     @item = Item.find(params[:id])
@@ -68,6 +79,9 @@ include BreadExpressHelpers::Cart
   def item_params
     params.require(:item).permit(:name, :description, :picture, :category, :units_per_item, :weight, :active)
   end
+
+
+
 	
 
 end

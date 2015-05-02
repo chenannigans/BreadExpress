@@ -8,15 +8,19 @@ BreadExpress::Application.routes.draw do
   resources :users
   resources :sessions
 
-
-  
   # Authentication routes
 
-
+resources :items do
+  collection do
+    post :addcart
+    put :savecart
+  end
+end
 
   # Semi-static page routes
   get 'home' => 'home#home', as: :home
   get 'cart' => 'home#cart', as: :cart
+
   get 'about' => 'home#about', as: :about
   get 'contact' => 'home#contact', as: :contact
   get 'privacy' => 'home#privacy', as: :privacy
@@ -24,6 +28,10 @@ BreadExpress::Application.routes.draw do
   get 'cylon' => 'errors#cylon', as: :cylon
   get 'user/edit' => 'users#edit', :as => :edit_current_user
   get 'signup' => 'users#new', :as => :signup
+
+  get 'items/index' => 'items#add_to_cart', :as => :add_to_cart
+  get 'items/index' => 'items#get_list_of_items_in_cart', :as => :get_list_of_items_in_cart
+
   get 'login' => 'sessions#new', :as => :login
   get 'logout' => 'sessions#destroy', :as => :logout
   # Set the root url

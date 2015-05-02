@@ -22,7 +22,14 @@ Available Items
           <td><%=link_to item.name, item_path(item) %><br /> </td>
          
 <!--          watch out for nil
- -->          <td>$<%=("%.2f" % item.current_price) %></td>
+
+ -->          
+        <%if !(item.current_price.nil?) %>
+        <td>$<%=("%.2f" % item.current_price) %></td>
+        <%else%>
+        <td><%="Not price set"%></td>
+
+        <%end%>
 
 
 
@@ -32,7 +39,7 @@ Available Items
                  <td>  <%= item.units_per_item.to_s + " " + item.category %></td>
                  <%end%>
 
-                    <td><%=link_to "add to cart",add_item_to_cart(item.id) %> <td> 
+                    <td><%=link_to "add to cart", add_to_cart_path(item.id)%> <td> 
 
         </tr>
 
