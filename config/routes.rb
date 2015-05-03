@@ -27,7 +27,7 @@ end
   get 'search' => 'home#search', as: :search
   get 'cylon' => 'errors#cylon', as: :cylon
   get 'user/edit' => 'users#edit', :as => :edit_current_user
-  get 'signup' => 'users#new', :as => :signup
+  get 'signup' => 'customers#new', :as => :signup
 
   get 'items/index' => 'items#add_to_cart', :as => :add_to_cart
   get 'items/index' => 'items#get_list_of_items_in_cart', :as => :get_list_of_items_in_cart

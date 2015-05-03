@@ -7,8 +7,10 @@ class Ability
     
      if user.role? :admin
     can :manage, :all
+   
   else
-    can :read, :all
+    can :create, Customer
+    can :create, User
   end
 
 
