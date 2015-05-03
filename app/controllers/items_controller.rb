@@ -15,6 +15,9 @@ include BreadExpressHelpers::Cart
 	end  
   end
 
+  def edit
+  end
+
   def show
 
   	@prices = @item.item_prices.chronological
@@ -48,7 +51,7 @@ include BreadExpressHelpers::Cart
 
   def update
     if @item.update(item_params)
-      redirect_to @item, notice: "Your item was revised in the system."
+      redirect_to items_path, notice: "Your item was revised in the system."
     else
       render action: 'edit'
     end

@@ -16,7 +16,7 @@
           <td><%= link_to customer.name, customer_path(customer) %></td>
           <td><%= number_to_phone customer.phone %></td>
           <td><%= mail_to customer.email, customer.email, encode: "javascript"  %></td>
-        </tr>
+      </tr>
       <% end %>
     </tbody>
   </table>
