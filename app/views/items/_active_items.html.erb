@@ -5,55 +5,59 @@ Available Items
   <h4>No active items at this time.</h4>
 <% else %>
   <h4> Items</h4>
-  <table class="table-striped ">
-    <thead>
-      <tr>
-        <th width="100">Name</th>
-        <th width="100">Price</th>
-        <th width="100">Units</th>
-        <th width="100">Add to cart </th>
-        <th width="100">Edit</th>
-<!--         <th width="250">Items</th>
-        <th width="100">Cost</th> -->
-      </tr>
-    </thead>
-    <tbody>
+
+<%row = 1 %>
+    <div class = "card">
+
       <% @active_items.each do |item| %>
         <tr>
-      
-          <td><%=link_to item.name, item_path(item) %><br /> </td>
-         
-<!--          watch out for nil
 
- -->          
-        <%if !(item.current_price.nil?) %>
-        <td>$<%=("%.2f" % item.current_price) %></td>
-        <%else%>
-        <td><%="Not price set"%></td>
+          <div class = "row">
 
-        <%end%>
+            <div class = "col s3">
 
 
+               <div class="card">
+                  <div class="card-image waves-effect waves-block waves-light">
+                      <div class="activator card-image">
 
-         <% if (item.category == "bread") %>
-                 <td>  <%= item.units_per_item.to_s + " " + "loaf" %></td>
-              <%else%>
-                 <td>  <%= item.units_per_item.to_s + " " + item.category %></td>
+                          <% if item.picture_url.nil? %>
+                          <div id = "picformat">
+                              <img src = "http://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg">
+                            </div>
 
-         
-            <%end%>
-                           <td><%=link_to "add to cart", add_item_to_cart_path(item.id)%> <td> 
+                          <%else%>
+                          <div id = "picformat">
+                                 <p><%= image_tag item.picture_url %></p>
+                               </div>
+                          <% end %>   
+                      </div>
+                    </div>
+                      
+                      <div class="card-content">
+
+                  <span class="card-title activator grey-text text-darken-4"><%=item.name%><i class="mdi-navigation-more-vert right"></i></span>
+                  <p><%= link_to "Details", item_path(item) %>
+                      </div>
+                <div class="card-reveal">
+                  <span class="card-title grey-text text-darken-4">Description<i class="mdi-navigation-close right"></i></span>
+                  <p><%=item.description%></p>
+                </div>
+                </div>
+              </div>
+            </div>
+      </div>
 
 
+          
 
-        </tr>
-
-      
-        
-      <% end %>
-    </tbody>
-  </table>
   <% end %>
+
+
   <%= will_paginate @active_items, previous_label: "Previous&nbsp;", next_label: "&nbsp;Next" %>  
+      <% end %>
+
+</div>
+</div>
 
 
