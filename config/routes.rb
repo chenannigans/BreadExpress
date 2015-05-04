@@ -10,11 +10,11 @@ BreadExpress::Application.routes.draw do
 
   # Authentication routes
 
-resources :items do
-    member do 
-        post 'add_item_to_cart'
-    end
-end
+# resources :items do
+#     member do 
+#         post 'add_item_to_cart'
+#     end
+# end
 
   # Semi-static page routes
   get 'home' => 'home#home', as: :home
