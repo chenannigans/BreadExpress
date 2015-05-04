@@ -63,7 +63,9 @@ include BreadExpressHelpers::Cart
     redirect_to items_url, notice: "This item was removed from the system."
   end
 
-  def add_to_cart
+  def add_item_to_cart
+        redirect_to items_url, notice: "This item was added to the cart."
+
     add_item_to_cart(params[:id])
   end
 

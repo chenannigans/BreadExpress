@@ -1,4 +1,12 @@
+
+     <div class="row">
+        <div class="col s8 offset-s2">
+          <div class="card #fdfbd5">
+            <div class="card-content black-text">
+                <table class="bordered hoverable ">
+
 <% if @pending_orders.empty? %>
+
   <h5><em>No pending orders at this time.</em></h5>
 <% else %>
   <%= render :partial => "order_list", locals: {status: 'Pending', orders: @pending_orders} %> 
@@ -7,4 +15,10 @@
     &nbsp;Add a New Order
   <% end %> 
 <% end %>
+
+</table>
+</div>
+</div>
+</div>
+</div>
 

@@ -11,10 +11,9 @@ BreadExpress::Application.routes.draw do
   # Authentication routes
 
 resources :items do
-  collection do
-    post :addcart
-    put :savecart
-  end
+    member do 
+        post 'add_item_to_cart'
+    end
 end
 
   # Semi-static page routes
@@ -29,7 +28,7 @@ end
   get 'user/edit' => 'users#edit', :as => :edit_current_user
   get 'signup' => 'customers#new', :as => :signup
 
-  get 'items/index' => 'items#add_to_cart', :as => :add_to_cart
+  post 'items/' => 'items#add_item_to_cart', :as => :add_item_to_cart
   get 'items/index' => 'items#get_list_of_items_in_cart', :as => :get_list_of_items_in_cart
 
   get 'login' => 'sessions#new', :as => :login

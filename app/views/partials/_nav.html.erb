@@ -1,10 +1,9 @@
 
   <div class="nav-wrapper">
+       <div id="title_area">
+      <%= link_to image_tag('breadexpress_title2.png'), home_path, {:class=> "brand-logo left" } %>
+    </div>
         <ul class="right hide-on-med-and-down">
-
-
-        <li><%= link_to "Home", home_path %></li>
-
 
         <% if !logged_in? %>
           <li><%= link_to "View Menu", items_path %></li>
@@ -12,23 +11,30 @@
         <% elsif logged_in? && (current_user.role?(:admin) || current_user.role?(:customer)) %>
         
 
-        <ul id="dropdown2" class="dropdown-content">
 
-              <li><%= link_to "My Orders", orders_path %></li>
-              <li><%= link_to "New Order", new_order_path %></li>
-       
-        </ul>
-
-        <li><a class="dropdown-button" href="#!" data-activates="dropdown2">Orders<i class="mdi-navigation-arrow-drop-down right"></i></a></li>
-      
+              <li><%= link_to "Orders", orders_path %></li>
+<!--               <li><%= link_to "New Order", new_order_path %></li>
+ -->       
+  
 
     
       <ul id="dropdown1" class="dropdown-content">  
-              <li><%= link_to "My Addresses", addresses_path %></li>
+              <li><%= link_to "All Addresses", addresses_path %></li>
               <li><%= link_to "Add an Address", new_address_path %></li>
       </ul>
 
      <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Addresses<i class="mdi-navigation-arrow-drop-down right"></i></a></li>
+
+     <ul id="dropdown4" class="dropdown-content">  
+              <li><%= link_to "Customers", customers_path %></li>
+              <li><%= link_to "Bakers", customers_path %></li>
+              <li><%= link_to "Shippers", customers_path %></li>
+
+
+      </ul>
+
+     <li><a class="dropdown-button" href="#!" data-activates="dropdown4">Users<i class="mdi-navigation-arrow-drop-down right"></i></a></li>
+
 
       <li><%= link_to "Items", items_path %></li>
 

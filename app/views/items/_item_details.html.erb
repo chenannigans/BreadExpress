@@ -1,8 +1,8 @@
 <h3><%= @item.name %></h3>
 
   <% if @item.picture_url.nil? %>
-    <p><%= image_tag "/images/img_not_available.png"%>
-
+<!--     <p><%= image_tag "/images/img_not_available.png"%>
+ -->
   <%else%>
     <p><%= image_tag @item.picture_url %></p>
   <% end %>

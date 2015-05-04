@@ -1,6 +1,13 @@
+ <div class="row">
+        <div class="col s8 offset-s2">
+          <div class="card #fdfbd5">
+            <div class="card-content black-text">
+
+              <h4> New Address </h4>
+
 <%= simple_form_for @address, html: { class: 'form-horizontal' } do |f| %>
   <fieldset>
-    <legend><%= controller.action_name.capitalize %> Address</legend>
+   
 
     <% if current_user.role?(:admin) %>
       <%= f.input :customer_id, collection: Customer.active.alphabetical, include_blank: true, input_html: {class: "avg"} %>
@@ -8,19 +15,57 @@
       <%= f.input :customer_id, as: :hidden, input_html: { value: current_user.customer.id } %>
     <% end %>
 
+<div class="input-field col s12">
+
     <%= f.input :recipient, input_html: {class: "avg"} %>
+    </div>
+<div class="input-field col s12">
+
     <%= f.input :street_1, input_html: {class: "avg"} %>
+
+    </div>
+<div class="input-field col s12">
+
     <%= f.input :street_2, input_html: {class: "avg"} %>
+    </div>
+<div class="input-field col s12">
+
     <%= f.input :city, input_html: {class: "avg"} %>
+    </div>
+<div class="input-field col s12">
+
     <%= f.input :state, collection: Address::STATES_LIST, include_blank: true, input_html: {class: "avg"} %>
+    </div>
+<div class="input-field col s12">
+
     <%= f.input :zip, input_html: {class: "avg"} %>
-    <%= f.input :is_billing, label: 'Billing? ' %>
-    <%= f.input :active %>
+    </div>
+<div class="input-field col s12">
 
+   <input type="checkbox" id="<%=:is_billing%>" />
+   <label for="<%=:is_billing%>">Is Billing?</label>
+</input>
 
+    </div>
+<div class="input-field col s12">
+
+   <input type="checkbox" id="<%=:active%>" />
+<label for="<%=:active%>">Active</label>
+</input>
+    </div>
+
+<div class="input-field col s12 container">
     <div class="form-actions">
+
+
       <%= f.submit nil, :class => 'button radius' %>
+    </br>
       <%= link_to 'Cancel', addresses_path, :class => 'button alert radius' %>
     </div>
+  </div>
   </fieldset>
 <% end %>
+</div>
+</div>
+</div>
+</div>

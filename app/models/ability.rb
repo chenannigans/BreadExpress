@@ -8,9 +8,9 @@ class Ability
      if user.role? :admin
     can :manage, :all
    
-  else
-    can :create, Customer
-    can :create, User
+  # else
+  #   can :create, Customer
+  #   can :create, User
   end
 
 
