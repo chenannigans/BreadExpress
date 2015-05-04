@@ -1,7 +1,13 @@
-<h3>Order Details</h3>
+ <div class="row">
+        <div class="col s8 offset-s2">
+          <div class="card">
+            <div class="card-content black-text">
+              <span class="card-title black-text"></span>  <a class="waves-effect waves-dark btn red darken-4 right" <%= link_to 'EDIT', edit_order_path(@order) %> </a>
+
+<h4>Order Details</h4>
 
 <p>
-  <b>Date</b>: <%= @order.date.strftime('%B %e, %Y') %>
+  <b>Date Shipped</b>: <%= @order.date.strftime('%B %e, %Y') %>
 </p>
 
 <p>
@@ -20,6 +26,13 @@
   <b>Total Cost</b>: <%= number_to_currency @order.grand_total %>
 </p>
 
+</div>
+</div>
+</div>
+</div>
+
+<div>
+
 <p>
   <%= render partial: "partials/order_item_list", locals: {order_items: @order_items, date: @order.date} %>
 </p>
@@ -27,3 +40,5 @@
 <p>
   <em>Thanks for being a Bread Express customer since <%= @order.customer.created_at.year %>.</em>
 </p>
+
+

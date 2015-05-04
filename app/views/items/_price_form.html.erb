@@ -1,0 +1,16 @@
+<%= simple_form_for(@item, :html => { :multipart => true}) do |f| %>
+  <fieldset>
+    
+   <p>
+    <%= f.label :price %><br />
+    <%= f.text_field :item.item_price%>
+  </p>
+
+
+
+    <div class="form-actions">
+      <%= f.submit nil, :class => 'button radius' %>
+     
+    </div>
+  </fieldset>
+<% end %>

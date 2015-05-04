@@ -16,6 +16,8 @@ include BreadExpressHelpers::Cart
   end
 
   def edit
+      @item = Item.find(params[:id])
+
   end
 
   def show
@@ -34,7 +36,7 @@ include BreadExpressHelpers::Cart
   end
 
   def new
-    @item = Item.new
+  @item = Item.find(params[:id])
 
   end
 

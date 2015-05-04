@@ -1,8 +1,16 @@
-<h3><%= @customer.proper_name %></h3>
+
+
+	     <a class="waves-effect waves-dark btn red darken-4 right" <%= link_to 'EDIT', edit_customer_path(@customer) %> </a>
+
+ 
+<h4><%= @customer.proper_name %></h4>
+
 
 <p>
   <b>Phone</b>: <%= number_to_phone @customer.phone %>
 </p>
+
+
 
 <p>
   <b>Email</b>: <%= mail_to @customer.email, @customer.email, encode: "javascript" %>
