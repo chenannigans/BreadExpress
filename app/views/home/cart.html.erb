@@ -1,3 +1,4 @@
-<%=get_list_of_items_in_cart%>
- 
-
+<%= render partial: "cart_list", locals: {model_name: "item", 
+                                                         primary: "cartlist", 
+                                                         secondary: "totalcost", 
+                                                         sidebar: nil} %>

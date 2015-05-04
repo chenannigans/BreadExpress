@@ -29,8 +29,12 @@ module BreadExpressHelpers
 
     def remove_item_from_cart(item_id)
       if session[:cart].keys.include?(item_id)
+        if session[:cart][item_id] == 1
         session[:cart].delete(item_id)
+      else
+        session[:cart][item_id] -=1
       end
+    end
     end
 
     def calculate_cart_items_cost

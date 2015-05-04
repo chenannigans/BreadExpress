@@ -42,18 +42,30 @@
     </div>
 <div class="input-field col s12">
 
-   <input type="checkbox" id="<%=:is_billing%>" />
-   <label for="<%=:is_billing%>">Is Billing?</label>
-</input>
+<%=f.check_box :active %>
+<%=f.label :active %>
 
-    </div>
+    
+</div>
+
 <div class="input-field col s12">
+
+<%=f.check_box :is_billing %>
+<%=f.label :is_billing %>
+
+    
+</div>
+
+  </div>
+</div>
+
+<!-- <div class="input-field col s12">
 
    <input type="checkbox" id="<%=:active%>" />
 <label for="<%=:active%>">Active</label>
 </input>
     </div>
-
+ -->
 <div class="input-field col s12 container">
     <div class="form-actions">
 

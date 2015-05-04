@@ -27,6 +27,8 @@ class CustomersController < ApplicationController
   end
 
   def create
+            create_cart
+
     @customer = Customer.new(customer_params)
     if @customer.save
       session[:user_id] = @customer.user_id

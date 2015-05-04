@@ -20,7 +20,7 @@
       <th>Recipient</th>
       <th>Address</th>
       <th>Billing?</th>
-      <th>&nbsp;</th>
+      <th>Active</th>
     </tr>
   </thead>
   <tbody>
@@ -34,7 +34,10 @@
           <%= render :partial => "partials/address_info", locals: {address: address} %>
         </td>
         <td><%= address.is_billing ? "Yes" : "No" %></td>      
-        <td>
+
+           <td><%= address.active ? "Yes" : "No" %></td>      
+
+<td>
           <%= link_to(edit_address_path(address), class: 'button tiny radius warning') do %>
             &nbsp;Edit&nbsp;
           <% end %>

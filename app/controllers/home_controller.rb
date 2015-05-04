@@ -1,5 +1,7 @@
 class HomeController < ApplicationController
   include BreadExpressHelpers::Baking
+    include BreadExpressHelpers::Cart
+
 
   def home
 
@@ -15,6 +17,10 @@ class HomeController < ApplicationController
   def contact
   end
 
+  def cart
+  	@cartitems = get_list_of_items_in_cart
+    @totalcost = calculate_cart_items_cost
+  end
 
 
 

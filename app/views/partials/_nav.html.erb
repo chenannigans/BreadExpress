@@ -38,10 +38,11 @@
 
       <li><%= link_to "Items", items_path %></li>
 
+      <% if logged_in? %>
 
-      <li><%= link_to "Cart " + "(" + session[:cart].keys.length.to_s + ")", cart_path%> </li>
+      <li><%= link_to "Cart " + "(" + session[:cart].length.to_s + ")", cart_path%> </li>
           
-
+      <% end%>
       <li>
           
           <% if logged_in? %>

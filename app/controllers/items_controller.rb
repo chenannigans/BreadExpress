@@ -72,10 +72,18 @@ include BreadExpressHelpers::Cart
 
   end
 
+  def remove_from_cart
+    remove_item_from_cart(params[:id])
+    redirect_to items_url, notice: "This item was removed from the cart."
+  end
+
   def get_list_of_items_in_cart
       get_list_of_items_in_cart
     end
 
+  def calculate_cart_items_cost
+      calculate_cart_items_cost
+  end
 
 
 
