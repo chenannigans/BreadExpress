@@ -28,8 +28,9 @@ BreadExpress::Application.routes.draw do
   get 'user/edit' => 'users#edit', :as => :edit_current_user
   get 'signup' => 'customers#new', :as => :signup
 
-  post 'items/:id' => 'items#add_item_to_cart', :as => :add_item_to_cart
-  get 'items/index' => 'items#get_list_of_items_in_cart', :as => :get_list_of_items_in_cart
+  post 'items/:id' => 'items#add_to_cart', :as => :add_to_cart
+
+  get 'items/:id' => 'items#get_list_of_items_in_cart', :as => :get_list_of_items_in_cart
 
   get 'login' => 'sessions#new', :as => :login
   get 'logout' => 'sessions#destroy', :as => :logout

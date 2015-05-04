@@ -22,6 +22,7 @@
     end
 
     def destroy
+      destroy_cart
       session[:user_id] = nil
       redirect_to home_path, notice: "Logged out!"
     end

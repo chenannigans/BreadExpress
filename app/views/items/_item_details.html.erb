@@ -1,16 +1,14 @@
   <a class="waves-effect waves-dark btn red darken-4 right" <%= link_to 'EDIT', edit_item_path(@item) %> </a>
 
 <h3><%= @item.name %></h3>
-
+<!-- 
   <% if @item.picture_url.nil? %>
    <p><%= image_tag "/images/img_not_available.png"%>
 
   <%else%>
     <p><%= image_tag @item.picture_url %></p>
   <% end %>
-
-
-
+ -->
 <p>
   <b>Description</b>: <%= @item.description %>
 </p>
@@ -35,7 +33,7 @@
 
          
             <%end%>
-                           <td><%=link_to "add to cart", add_item_to_cart_path(@item.id)%> <td> </p>
+        <td><%=link_to "add to cart", add_to_cart_path(@item.id), :method => :post%> <td> </p>
 
 <p>
   <b>Total weight</b>: <%= @item.weight %> lbs.

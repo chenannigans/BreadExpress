@@ -6,12 +6,12 @@ class Ability
     user ||= User.new # i.e., a guest user
     
     if user.role? :admin
-    can :manage, :all
-  else
-    can :read, :all
-  end
-
-
-
+      can :manage, :all
+    else
+      can :create, Customer
+      can :read, :all
+      can :create, User
+      can :add_to_cart, Item
+    end
   end
 end
