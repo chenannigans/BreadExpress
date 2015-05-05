@@ -27,7 +27,7 @@ class OrdersController < ApplicationController
   end
 
   def new
-  @order = Order.new
+  @order = Order.new()
   end
 
   def create
@@ -37,7 +37,8 @@ class OrdersController < ApplicationController
 
     if @order.save
       @order.pay
-
+      save_each_item_in_cart(@order)
+      clear_cart
       redirect_to @order, notice: "Thank you for ordering from Bread Express."
     else
       render action: 'new'
