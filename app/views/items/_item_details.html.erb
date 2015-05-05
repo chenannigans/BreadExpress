@@ -1,51 +1,60 @@
-  
+ <div class="row">
+        <div class="col s8 offset-s2">
+
 <%if current_user.role?(:admin)%>
 
   <a class="waves-effect waves-dark btn red darken-4 right" <%= link_to 'EDIT', edit_item_path(@item) %> </a>
   <%end%>
 
-<h3><%= @item.name %></h3>
+<div class = " col s6">
 
+<div id = "picformat">
   <% if @item.picture_url.nil? %>
-   <p><%= image_tag "/images/img_not_available.png"%>
+   <p><%= image_tag "http://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg"%>
 
   <%else%>
-    <p><%= image_tag @item.picture_url %></p>
+    <p><%= image_tag @item.picture_url, size: "300x300" %></p>
   <% end %>
 
-<p>
-  <b>Description</b>: <%= @item.description %>
-</p>
+</div>
+</div>
 
-<p>
-  <b>Price</b>: $<%= @item.current_price %>
-</p>
+   <div class="row">
 
-<p>
-  <b>Picture</b>: This will be filled in
-</p>
+<h3><%= @item.name%></h3>
 
+<h4>$<%= @item.current_price %></h4>
 <p>
-  <b>Category</b>: <%= @item.category %>
+  <%= @item.description %>
+
 </p>
 
 <p>
  <% if (@item.category == "bread") %>
                  <td>  <%= @item.units_per_item.to_s + " " + "loaf" %></td>
               <%else%>
-                 <td>  <%= @item.units_per_item.to_s + " " + @item.category %></td>
+                 <td>  <%= @item.units_per_item.to_s + " " + @item.category %> per order.</td>
 
          
             <%end%>
-        <td><%=link_to "add to cart", add_to_cart_path(@item.id), :method => :post%> <td> </p>
+          </br>
+        </br>
+      </br>
+        <td>
+          <p><div class = "row left">
+           <a class="waves-effect waves-dark btn red darken-4 right"<%=link_to "add to cart", add_to_cart_path(@item.id), :method => :post%></a> <td> </p>
+         </div>
 
 <p>
-  <b>Total weight</b>: <%= @item.weight %> lbs.
+ 
 </p>
 
 <p>
-  <b>Active</b>: <%= @item.active ? 'Yes' : 'No' %>
-</p>
+<!--   <b>Active</b>: <%= @item.active ? 'Yes' : 'No' %>
+ --></p>
+</div>
+</div>
 
-<p>
-</p>
+
+</div>
+</div>

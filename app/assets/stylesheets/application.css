@@ -18,12 +18,21 @@
  */
 
  #picformat {
- 	width: 300px;
- 	height: 300px;
+ 	max-width: 300px;
+ 	max-height: 300px;
  }
 
  .itemcard {
  	height: 450px;
+ }
+
+#picformat2 {
+ 	max-height: 200px;
+ }
+
+
+  .itemcard2 {
+ 	height: 350px;
  }
 
 
