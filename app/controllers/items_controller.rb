@@ -2,17 +2,17 @@ class ItemsController < ApplicationController
 include BreadExpressHelpers::Cart
 
  before_action :check_login
-  before_action :set_item, only: [:show, :update, :destroy]
+before_action :set_item, only: [:show, :update, :destroy]
   authorize_resource
 
 
   
   def index
-    if logged_in?
+    
       @active_items = Item.active.alphabetical.paginate(:page => params[:page]).per_page(8)
       @inactive_items = Item.inactive.alphabetical.paginate(:page => params[:page]).per_page(8)
 
-	end  
+  
   end
 
   def edit
@@ -23,8 +23,6 @@ include BreadExpressHelpers::Cart
   def show
 
   	@prices = @item.item_prices.chronological
-
-
 
     if current_user.role?(:customer)
       @similar_items = Item.for_category(@item.category)

@@ -1,8 +1,24 @@
 <div class="fields">
       <!-- x icon to remove -->
       <!-- fields -->
-      <%= f.input :username %>
-      <%= f.input :password %>
-      <%= f.input :password_confirmation %>
+
+          <div class="input-field col s12">
+      <%= f.label "Username" %>
+
+      <%= f.text_field :username %>
+  </div>
+
+
+          <div class="input-field col s12">
+      <%= f.label "Password" %>
+
+      <%= f.password_field :password %>
+  </div>
+
+          <div class="input-field col s12">
+      <%= f.label "Confirmation" %>
+
+      <%= f.password_field :password_confirmation %>
+  </div>
 
     </div>

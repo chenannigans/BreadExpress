@@ -8,8 +8,7 @@
         <% if !logged_in? %>
           <li><%= link_to "Bread Menu", items_path %></li>
 
-<!--         <% elsif logged_in? && (current_user.role?(:admin) || current_user.role?(:customer)) %>
- -->          <% elsif logged_in? %>
+      <% elsif logged_in? %>
 
 
               <% if current_user.role?(:baker) %>

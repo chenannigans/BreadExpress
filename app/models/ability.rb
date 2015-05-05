@@ -20,6 +20,9 @@ class Ability
 
     elsif user.role? :baker
       can :read, :all
+
+    else 
+      can :read, :all
    
 
     end
