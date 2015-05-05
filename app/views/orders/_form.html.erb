@@ -1,0 +1,82 @@
+ <div class="row">
+        <div class="col s8 offset-s2">
+            <div class="card-content black-text">
+
+<%= simple_form_for(@order) do |f| %>
+ <% if @order.errors.any? %>
+  
+      <ul>
+      <% @order.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+
+  <% end %>
+  
+
+ <div class="field">
+
+  <%= f.label :customer_id %><br/>
+  <%= f.collection_select :customer_id, Customer.all.active, :id, :name%>
+
+ </div>
+
+ <div class = "field">
+        <%= f.label :address_id %><br/>
+
+  <%= f.collection_select :address_id, Address.all.active, :id, :recipient_and_address%>
+ </div>
+
+     <div class = "field">
+      <%= f.label :grand_total %><br />
+      <%= f.text_field :grand_total %>
+    
+      </div>
+
+      <div class = "field">
+       <%= f.label :credit_card_number %><br />
+      <%= f.text_field :credit_card_number%>
+    </div>
+
+    <div class = "field">
+       <%= f.label :expiration_year %><br />
+      <%= f.text_field :expiration_year%>
+    </div>
+
+    <div class = "field">
+       <%= f.label :expiration_month %><br />
+      <%= f.text_field :expiration_month%>
+    </div>
+
+
+
+  <!--   <div class="input-field col s3">
+    <select>
+      <option value="" disabled selected>Choose your option</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10">10</option>
+      <option value="11">11</option>
+      <option value="12">12</option>
+
+    </select>
+    <label>Materialize Select</label>
+  </div> -->
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+
+  <% end %>
+</div>
+</div>
+</div>
+</div>

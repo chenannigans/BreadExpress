@@ -1,4 +1,8 @@
+  
+<%if current_user.role?(:admin)%>
+
   <a class="waves-effect waves-dark btn red darken-4 right" <%= link_to 'EDIT', edit_item_path(@item) %> </a>
+  <%end%>
 
 <h3><%= @item.name %></h3>
 <!-- 

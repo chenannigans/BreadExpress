@@ -36,7 +36,7 @@ include BreadExpressHelpers::Cart
   end
 
   def new
-  @item = Item.find(params[:id])
+  @item = Item.new
 
   end
 
@@ -52,6 +52,7 @@ include BreadExpressHelpers::Cart
   end
 
   def update
+
     if @item.update(item_params)
       redirect_to items_path, notice: "Your item was revised in the system."
     else

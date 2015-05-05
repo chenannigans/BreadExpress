@@ -9,7 +9,7 @@ class Ability
       can :manage, :all
     elsif user.role? :customer
       can :edit, OrderItem
-      can :edit, Item
+      can :create, Order
       can :create, Customer
       can :create, Address
       can :edit, Address

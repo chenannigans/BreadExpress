@@ -20,6 +20,7 @@ BreadExpress::Application.routes.draw do
   get 'home' => 'home#home', as: :home
   get 'cart' => 'home#cart', as: :cart
 
+  get 'place_order' => 'orders#new', :as => :place_order
 
   get 'about' => 'home#about', as: :about
   get 'contact' => 'home#contact', as: :contact

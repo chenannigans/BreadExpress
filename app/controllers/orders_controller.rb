@@ -27,13 +27,16 @@ class OrdersController < ApplicationController
   end
 
   def new
-
+  @order = Order.new
   end
 
   def create
     @order = Order.new(order_params)
+    @order.date = Date.today
+
 
     if @order.save
+      @order.pay
 
       redirect_to @order, notice: "Thank you for ordering from Bread Express."
     else
@@ -42,6 +45,8 @@ class OrdersController < ApplicationController
   end
 
   def update
+    # params[:order][:grand_total] = 
+
     if @order.update(order_params)
       redirect_to @order, notice: "Your order was revised in the system."
     else
@@ -60,7 +65,7 @@ class OrdersController < ApplicationController
   end
 
   def order_params
-    params.require(:order).permit(:address_id)
+    params.require(:order).permit(:customer_id, :address_id, :grand_total, :date, :payment_receipt, :credit_card_number, :expiration_month, :expiration_year)
   end
 
 
