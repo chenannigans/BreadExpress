@@ -14,12 +14,6 @@
   <% end %>
   
 
- <div class="field">
-
-  <%= f.label :customer_id %><br/>
-  <%= f.collection_select :customer_id, Customer.all.active, :id, :name%>
-
- </div>
 
  <div class = "field">
         <%= f.label :address_id %><br/>
@@ -27,11 +21,7 @@
   <%= f.collection_select :address_id, Address.all.active, :id, :recipient_and_address%>
  </div>
 
-     <div class = "field">
-      <%= f.label :grand_total %><br />
-      <%= f.text_field :grand_total %>
     
-      </div>
 
       <div class = "field">
        <%= f.label :credit_card_number %><br />

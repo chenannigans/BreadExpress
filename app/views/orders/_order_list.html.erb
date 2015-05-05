@@ -2,9 +2,9 @@
      <div class="row">
         <div class="col s8 offset-s2">
           <div class="card #fdfbd5">
-            <div class="card-content black-text">
                 <table class="bordered hoverable ">
-                    <h4>Previous Orders</h4>
+
+                    <h4><%=status%> Orders</h4>
 
     <thead>
       <tr>
@@ -14,6 +14,7 @@
         <th>Cost</th>
       </tr>
     </thead>
+    
     <tbody>
       <% orders.each do |order| %>
         <tr>
@@ -24,13 +25,15 @@
               <%= oi.quantity %> <%= oi.item.name %><br />
             <% end %>
           </td>
+
           <td><%= number_to_currency order.grand_total %></td>
         </tr>
       <% end %>
     </tbody>
+  </table>
+  <%= will_paginate orders, previous_label: "Previous&nbsp;", next_label: "&nbsp;Next" %>  
+
   </div>
 </div>
 </div>
-</div>
-  </table>
-<%= will_paginate orders, previous_label: "Previous&nbsp;", next_label: "&nbsp;Next" %>  
+
