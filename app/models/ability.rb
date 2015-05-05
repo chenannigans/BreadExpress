@@ -17,6 +17,11 @@ class Ability
       can :create, User
       can :add_to_cart, Item
       can :remove_from_cart, Item
+
+    elsif user.role? :baker
+      can :read, :all
+   
+
     end
   end
 end

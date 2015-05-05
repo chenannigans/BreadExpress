@@ -1,4 +1,6 @@
 
+<% if current_user.role?(:admin) %>
+
 <% if @inactive_items.empty? %>
   <h4>No inactive items at this time.</h4>
 <% else %>
@@ -14,3 +16,5 @@
 <% end %>
 
   <%= will_paginate @inactive_items, previous_label: "Previous&nbsp;", next_label: "&nbsp;Next" %>  
+
+  <%end%>

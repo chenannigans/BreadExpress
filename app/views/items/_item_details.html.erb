@@ -31,19 +31,24 @@
 
 <p>
  <% if (@item.category == "bread") %>
-                 <td>  <%= @item.units_per_item.to_s + " " + "loaf" %></td>
+                 <td>  <%= @item.units_per_item.to_s + " " + "loaf" %> per order.</td>
               <%else%>
                  <td>  <%= @item.units_per_item.to_s + " " + @item.category %> per order.</td>
 
-         
             <%end%>
+          </br>
+                            <td>Total weight: <%= @item.weight.to_s%> lbs.</td>
+
           </br>
         </br>
       </br>
         <td>
+
+          <% if current_user.role?(:admin) || current_user.role?(:customer) %>
           <p><div class = "row left">
            <a class="waves-effect waves-dark btn red darken-4 right"<%=link_to "add to cart", add_to_cart_path(@item.id), :method => :post%></a> <td> </p>
          </div>
+         <%end%>
 
 <p>
  

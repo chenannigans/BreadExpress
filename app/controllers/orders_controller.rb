@@ -1,6 +1,8 @@
 class OrdersController < ApplicationController
   include BreadExpressHelpers::Cart
     include BreadExpressHelpers::Shipping
+        include BreadExpressHelpers::Baking
+
 
 
 
@@ -10,9 +12,16 @@ class OrdersController < ApplicationController
   
   def index
 
-    if logged_in? && !current_user.role?(:customer)
+    if logged_in? && current_user.role?(:admin)
       @pending_orders = Order.not_shipped.chronological.paginate(:page => params[:page]).per_page(5)
       @all_orders = Order.chronological.paginate(:page => params[:page]).per_page(5)
+
+    elsif logged_in? && current_user.role?(:baker)
+      @bread_baking_list = create_baking_list_for("bread")
+      @muffins_baking_list = create_baking_list_for("muffins")
+      @pastries_baking_list = create_baking_list_for("pastries")
+
+
     else
 
       @pending_orders = current_user.customer.orders.not_shipped.chronological.paginate(:page => params[:page]).per_page(5)
