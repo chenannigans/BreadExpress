@@ -2,66 +2,62 @@
         <div class="col s8 offset-s2">
           <div class="card">
             <div class="card-content black-text">
-<table class="bordered hoverable">
+              <table class="bordered hoverable">
 
-  <% if @cartitems.empty? %>
-  <h4>Cart is empty </h4>
-  <%=link_to "What are you waiting for? Click here to browse our goods", items_path%>
-  <%else%>
+              <% if @cartitems.empty? %>
+              <h4>Cart is empty </h4>
+              <%=link_to "What are you waiting for? Click here to browse our goods", items_path%>
+              <%else%>
 
-<h4>Cart Items </h4>
-  <thead>
-    <tr>
- 
-      <th >Item Name</th>
-      <th width = "20%">Quantity?</th>
-      <div class = "right">
-      <th width = "10%">Price</th>
-    </div>
-    </tr>
-  </thead>
-  <tbody>
-
-
-    <% for orderitem in @cartitems %>
-      <tr>
-        
-        <td><%= orderitem.item.name %></td>
-
-                <td><%=link_to "------", remove_from_cart_path(orderitem.item.id), :method => :post%> <%=orderitem.quantity%><%=link_to "+++", add_to_cart_path(orderitem.item.id), :method => :post%>  </td> </p>
+            <h4>Cart Items </h4>
+              <thead>
+                <tr>
+             
+                  <th >Item Name</th>
+                  <th width = "20%">Quantity?</th>
+                  <div class = "right">
+                  <th width = "10%">Price</th>
+                </div>
+                </tr>
+              </thead>
+              <tbody>
 
 
+                <% for orderitem in @cartitems %>
+                  <tr>
+                    
+                    <td><%= orderitem.item.name %></td>
 
-         <td> $<%= orderitem.item.current_price%> </td>
-
-      </tr>
-
-    <%end%>
-
-  </tbody>
-
-</table>
-
-<h5>
-<div class = "left">
-  Total Cost
-</div>
-<div class = "row right">
-        <tr><%=number_to_currency @totalcost%>   </tr>
-      </h5>
-      </br>
-    </div>
-
-<div class = "row right">
-        <tr> 
-          <div id = "checkout">
-             <a class="waves-effect waves-dark btn red darken-4 right"<%= link_to "Checkout", place_order_path%> </a></div> </tr>
-
-               </div>
-             </div>
+                            <td><%=link_to "------", remove_from_cart_path(orderitem.item.id), :method => :post%> <%=orderitem.quantity%><%=link_to "+++", add_to_cart_path(orderitem.item.id), :method => :post%>  </td> 
 
 
-</div>
-</div>    <% end %>
 
-</div>
+                     <td> $<%= orderitem.item.current_price%> </td>
+
+                  </tr>
+
+                <%end%>
+
+              </tbody>
+
+            </table>
+
+            <h5>
+
+            <div class = "left">
+              Total Cost
+            </div>
+            <div class = "row right">
+                    <tr><%=number_to_currency @totalcost%>   </tr>
+                  </br>
+            <div class = "row right">
+                    <tr> 
+                      <div id = "checkout">
+                         <a class="waves-effect waves-dark btn red darken-4 right"<%= link_to "Checkout", place_order_path%> </a></div> </tr>
+
+             <% end %>
+           </div>
+         </div>
+       </div>
+     </div>
+         

@@ -18,6 +18,7 @@ class OrdersController < ApplicationController
      
       @bread_baking_list = create_baking_list_for("bread")
       @muffins_baking_list = create_baking_list_for("muffins")
+
       @pastries_baking_list = create_baking_list_for("pastries")
 
     else
