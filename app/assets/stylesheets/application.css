@@ -38,11 +38,8 @@
  	color: white;
  }
 
- li a{
- 	color: green;
- }
 
- tbody td a{
+ tbody td a, paginate{
  	color: #E6782E;
  }
 

@@ -4,16 +4,15 @@ class OrderItemsController < ApplicationController
  authorize_resource
 
  def index
-  @orders = OrderItems.all
 end
 
  def create
-      @order_item = OrderItem.new(order_item_params)
 
  	if !session[:cart].is_nil?
 
 		add_item_to_cart(current_item.id) 		
  	end
+      @order_item = OrderItem.new(order_item_params)
 
 
  end
