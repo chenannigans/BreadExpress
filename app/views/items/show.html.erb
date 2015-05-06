@@ -5,11 +5,7 @@
 
 <% if logged_in? && current_user.role?(:customer) %>
   <div class="form-actions">
-    <%= link_to items_path, class: 'button radius' do %>
-      &nbsp;Continue Shopping
-
-
-    <% end %>
+  
 
       <%= render partial: "partials/object_options", locals: {model_name: "item", object: @item}  %>
 
