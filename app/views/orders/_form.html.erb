@@ -12,10 +12,18 @@
       </ul>
 
   <% end %>
-  
+
+  <%if current_user.role?(:admin)%>
+  <div class="input-field col s12">
+<div class="field">
+    <%= f.label :customer_id %><br />
+    <%= f.collection_select :customer_id, Customer.active.all, :id, :name %>
+</div>
+</div>
+<%end%>
 
 
- <div class = "field">
+  <div class="input-field col s12">
         <%= f.label :address_id %><br/>
 
   <%= f.collection_select :address_id, Address.all.active, :id, :recipient_and_address%>
@@ -23,17 +31,17 @@
 
     
 
-      <div class = "field">
+  <div class="input-field col s12">
        <%= f.label :credit_card_number %><br />
       <%= f.text_field :credit_card_number%>
     </div>
 
-    <div class = "field">
+  <div class="input-field col s12">
        <%= f.label :expiration_year %><br />
       <%= f.text_field :expiration_year%>
     </div>
 
-    <div class = "field">
+  <div class="input-field col s12">
        <%= f.label :expiration_month %><br />
       <%= f.text_field :expiration_month%>
     </div>

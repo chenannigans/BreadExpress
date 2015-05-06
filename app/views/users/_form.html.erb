@@ -6,6 +6,15 @@
 
 <%= simple_form_for @user, html: {class: 'form-horizontal'} do |f| %>
 
+ <% if @user.errors.any? %>
+  
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+
+  <% end %>
 	
 	<p>
 
@@ -41,9 +50,9 @@
   </p>
 </div>
 
-  <p><%= f.submit (@user.new_record? ? "Sign up" : "Update") %></p>
-<% end %>
 
+  <div class="actions">
+    <%= f.
 </div>
 </div>
 </div>

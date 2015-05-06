@@ -1,6 +1,16 @@
 
 
 <%= simple_nested_form_for @customer do |customer_form| %>
+
+ <% if @customer.errors.any? %>
+  
+      <ul>
+      <% @customer.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+
+  <% end %>
 <div class = "row">
   <div class = "s8 m12">
 

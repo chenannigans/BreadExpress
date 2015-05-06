@@ -57,7 +57,7 @@ end
     @order_item = OrderItem.find(params[:id])
     @order_item.shipped_on = Date.today
     @order_item.save!
-    redirect_to order_path, notice: "Shipped baby!"
+    redirect_to order_path, notice: "You have shipepd the item!"
  end
 
 
