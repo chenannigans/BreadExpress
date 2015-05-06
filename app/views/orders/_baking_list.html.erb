@@ -4,7 +4,7 @@
     <div class="card #fdfbd5">
       <table class="bordered hoverable ">
 
-        <%if @bread_baking_list.nil?%>
+        <%if @bread_baking_list.empty?%>
 
         <h4>No breads </h4>
 
@@ -21,6 +21,7 @@
             
         <tbody>
 
+          <%=@bread_baking_list.size%>
           <% for item in @bread_baking_list %>
             <tr>
               <td><%= item[0] %></td>
@@ -42,9 +43,9 @@
     <div class="card #fdfbd5">
       <table class="bordered hoverable ">
         
-        <%if @muffins_baking_list.nil?%>
+        <%if @muffins_baking_list.empty?%>
 
-            <h4>No breads </h4>
+            <h4>No muffins </h4>
 
         <%else%>
 
@@ -80,7 +81,7 @@
   <div class="col s6 offset-s3">
     <div class="card #fdfbd5">
       <table class="bordered hoverable ">
-        <%if @muffins_baking_list.nil?%>
+        <%if @muffins_baking_list.empty?%>
             <h4>No breads </h4>
 
 
@@ -110,6 +111,7 @@
   </div>
 
 <%end%>
+</div>
 </div>
 </div>
 

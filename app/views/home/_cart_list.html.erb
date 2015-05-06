@@ -13,9 +13,11 @@
   <thead>
     <tr>
  
-      <th>Item Name</th>
-      <th>Quantity?</th>
-      <th>Price</th>
+      <th >Item Name</th>
+      <th width = "20%">Quantity?</th>
+      <div class = "right">
+      <th width = "10%">Price</th>
+    </div>
     </tr>
   </thead>
   <tbody>
@@ -41,11 +43,33 @@
 
 
     <%end%>
+
+
+
+
   </tbody>
 
+
+
 </table>
-        <tr><%=@totalcost%>   </tr>
-        <tr> <%=link_to "Checkout", place_order_path%> </tr>
+
+<h5>
+<div class = "left">
+  Total Cost
+</div>
+<div class = "row right">
+        <tr><%=number_to_currency @totalcost%>   </tr>
+      </h5>
+      </br>
+    </div>
+
+<div class = "row right">
+        <tr> 
+          <div id = "checkout">
+             <a class="waves-effect waves-dark btn red darken-4 right"<%= link_to "Checkout", place_order_path%> </a></div> </tr>
+
+               </div>
+             </div>
 
 
 </div>
