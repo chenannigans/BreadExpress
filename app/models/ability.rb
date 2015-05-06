@@ -20,7 +20,12 @@ class Ability
 
     elsif user.role? :baker
       can :read, :all
+      can :edit, OrderItem
 
+     elsif user.role? :shipper
+     can :read, :all
+     can :manage, :all
+     can :ship_item, OrderItem 
     else 
       can :read, :all
    

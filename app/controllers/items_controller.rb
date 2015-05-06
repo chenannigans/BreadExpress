@@ -85,7 +85,6 @@ before_action :set_item, only: [:show, :update, :destroy]
   end
 
 
-
   private
   def set_item
     @item = Item.find(params[:id])

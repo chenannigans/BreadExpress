@@ -27,7 +27,7 @@ class CustomersController < ApplicationController
   end
 
   def create
-            create_cart
+  create_cart
 
     @customer = Customer.new(customer_params)
     if @customer.save

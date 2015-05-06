@@ -6,6 +6,7 @@ class ItemTest < ActiveSupport::TestCase
   should have_many(:item_prices)
   should have_many(:orders).through(:order_items)
 
+
   # test validations with matchers
   should validate_presence_of(:name)
   should validate_uniqueness_of(:name).case_insensitive

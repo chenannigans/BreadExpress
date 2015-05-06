@@ -4,23 +4,21 @@ class OrdersController < ApplicationController
         include BreadExpressHelpers::Baking
 
 
-
-
   before_action :check_login
   before_action :set_order, only: [:show, :update, :destroy]
   authorize_resource
   
   def index
 
-    if logged_in? && current_user.role?(:admin)
+    if logged_in? && current_user.role?(:admin) || current_user.role?(:shipper)
       @pending_orders = Order.not_shipped.chronological.paginate(:page => params[:page]).per_page(5)
       @all_orders = Order.chronological.paginate(:page => params[:page]).per_page(5)
 
     elsif logged_in? && current_user.role?(:baker)
+     
       @bread_baking_list = create_baking_list_for("bread")
       @muffins_baking_list = create_baking_list_for("muffins")
       @pastries_baking_list = create_baking_list_for("pastries")
-
 
     else
 

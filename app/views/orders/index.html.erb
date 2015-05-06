@@ -1,4 +1,4 @@
-<% if current_user.role?(:admin)%>
+<% if current_user.role?(:admin) || current_user.role?(:shipper)%>
 
 <%= render partial: "partials/index_structure", locals: {model_name: "order", 
                                                          primary: "pending_orders", 

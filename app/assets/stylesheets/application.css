@@ -30,9 +30,20 @@
  	height: 200px;
  }
 
-
   .itemcard2 {
  	height: 350px;
+ }
+
+ .inline a{
+ 	color: white;
+ }
+
+ li a{
+ 	color: green;
+ }
+
+ tbody td a{
+ 	color: #E6782E;
  }
 
 

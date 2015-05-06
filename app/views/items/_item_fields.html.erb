@@ -1,0 +1,28 @@
+ <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+
+    <p>
+    <%= f.label :picture %><br />
+    <%= f.file_field :picture %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </p>
+  <p>
+    <%= f.label :category %><br />
+    <%= f.select :category, Item::CATEGORIES, :prompt => "Select ..." %>
+  </p>
+  <p>
+    <%= f.label :units_per_item, "Units Per Item" %><br />
+    <%= f.text_field :units_per_item %>
+  </p>
+   <p>
+    <%= f.label :weight %><br />
+    <%= f.text_field :weight%>
+  </p>
+
+<%=f.check_box :active %>
+<%=f.label :active %>

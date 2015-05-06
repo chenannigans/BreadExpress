@@ -34,6 +34,14 @@
               <% end %>
 
           </td>
+
+          <%if current_user.role?(:shipper) %>
+          <td>
+
+             <a class="waves-effect waves-dark btn red darken-4 right" <%= link_to "Ship!", ship_item_path(oi), :method => :post%></a>
+
+
+          <%end%>
       </tr>
     <% end %>
   </tbody>
