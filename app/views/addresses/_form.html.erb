@@ -18,7 +18,7 @@
   <fieldset>
    
 
-    <% if current_user.role?(:admin) %>
+    <% if current_user.role?(:admin) || current_user.role?(:shipper) %>
       <%= f.input :customer_id, collection: Customer.active.alphabetical, include_blank: true, input_html: {class: "avg"} %>
     <% else %>
       <%= f.input :customer_id, as: :hidden, input_html: { value: current_user.customer.id } %>
