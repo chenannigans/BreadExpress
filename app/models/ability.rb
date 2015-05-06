@@ -15,7 +15,7 @@ class Ability
 
 
       can :update, Customer do |c|
-      c.id = user.customer_id
+      c.id = user.customer.id
       end
        can :show, Customer do |c|
         c.id = user.customer.id

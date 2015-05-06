@@ -86,6 +86,10 @@ include BreadExpressHelpers::Cart
       calculate_cart_items_cost
   end
 
+  def change_item_price
+    @item_price = ItemPrice.new
+
+  end
 
 
   private
