@@ -8,6 +8,27 @@
 
 <%= image_tag 'bread.jpg', class: "responsive-img"%>     
 <div class = "card-content">
+
+
+	<% if !current_user.nil? && current_user.role?(:admin) %>
+	<div class="card-content">
+            	          <h4> Welcome, Admin </h4>
+            	Here you can manage the premiere online baked goods store that delivers delicious carbohydrates right to your front door. Create, view, and modify your users, addresses, items, and orders to your heart's content.</p>
+            </div>
+            <div class="card-action">
+
+        <ul class="collection with-header">
+        <li class="collection-header"><h5>Links to help you get started</h5></li>
+        <a href= "/users/new" class="collection-item">New Customer</a>
+        <a href="/addresses/new" class="collection-item">New Address</a>
+        <a href="/items/new" class="collection-item">New Item</a>
+
+      </div>
+
+            </div>
+          </div>
+          <%else%>
+
 		
 			<h3>Welcome To A &amp; M Bread Express</h3>
 			</p>
@@ -29,6 +50,8 @@
 			  <%= link_to "click here to login", login_path %>. </br> If you want 
 			  to create an account with us, <%= link_to "please click to register as a customer", signup_path %>.
 			</p>
+			<%end%>
+
 			<%end%>
 	</div>
 </div>

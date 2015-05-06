@@ -28,7 +28,7 @@
                     
                     <td><%= orderitem.item.name %></td>
 
-                            <td><%=link_to "------", remove_from_cart_path(orderitem.item.id), :method => :post%> <%=orderitem.quantity%><%=link_to "+++", add_to_cart_path(orderitem.item.id), :method => :post%>  </td> 
+                            <td><%=link_to "<i class='mdi-content-remove-circle'></i>".html_safe, remove_from_cart_path(orderitem.item.id), :method => :post%> <%=orderitem.quantity%><%=link_to "<i class='mdi-content-add-circle'></i>".html_safe, add_to_cart_path(orderitem.item.id), :method => :post%>  </td> 
 
 
 
