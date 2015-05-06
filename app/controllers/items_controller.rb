@@ -43,6 +43,10 @@ include BreadExpressHelpers::Cart
   def create
     @item = Item.new(item_params)
 
+    if @item.current_price ==nil
+      @item.active = false
+    end
+
     if @item.save
 
       redirect_to @item, notice: "#{@item.name} was added to the system."
