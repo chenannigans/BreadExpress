@@ -8,18 +8,9 @@ BreadExpress::Application.routes.draw do
   resources :users
   resources :sessions
 
-  # Authentication routes
 
-# resources :items do
-#     member do 
-#         post 'add_item_to_cart'
-#     end
-# end
-
-  # Semi-static page routes
   get 'home' => 'home#home', as: :home
   get 'cart' => 'home#cart', as: :cart
-
   get 'place_order' => 'orders#new', :as => :place_order
 
   get 'about' => 'home#about', as: :about

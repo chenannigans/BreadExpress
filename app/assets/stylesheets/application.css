@@ -18,8 +18,8 @@
  */
 
  #picformat {
- 	max-width: 300px;
- 	max-height: 300px;
+ 	width: 300px;
+ 	height: 300px;
  }
 
  .itemcard {
@@ -27,7 +27,7 @@
  }
 
 #picformat2 {
- 	max-height: 200px;
+ 	height: 200px;
  }
 
 

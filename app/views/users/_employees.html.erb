@@ -1,0 +1,36 @@
+        	 <div class="col s8 offset-s2">
+
+    <div class = "card">
+            <div class="card-content black-text">
+
+<table class="bordered hoverable">
+	<h4>Employees</h4>
+
+	 <thead>
+    <tr>
+      <th>Username</th>
+      <th>Role</th>
+    </tr>
+  </thead>
+
+<% for user in @employees %>
+	
+
+	<tr>
+		<td><%= link_to user.username, user_path(user) %></td>
+        <td><%= user.role%></td>
+
+       <td> <%= link_to(edit_user_path(user), class: 'button tiny radius warning') do %>
+            &nbsp;Edit&nbsp;</td>
+            <%end%>
+       
+
+<%end%>
+
+
+
+</table>
+
+</div>
+</div>
+</div>

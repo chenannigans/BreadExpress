@@ -2,13 +2,22 @@ class UsersController < ApplicationController
 
   include BreadExpressHelpers::Cart
 
-  before_action :set_user, only: [:edit, :update]
+  before_action :set_user, only: [:show, :edit, :update]
+
 
   skip_before_action :check_login, only: [:new, :create]
+
+  def index
+    @employees = User.employees
+  end
 
   def new
    @user = User.new
   end
+
+  def show
+  end
+
 
   def edit
     @user = current_user

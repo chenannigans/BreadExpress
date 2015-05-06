@@ -52,29 +52,21 @@
 
 <%=f.check_box :is_billing %>
 <%=f.label :is_billing %>
+</br>
 
     
-</div>
+<div class="input-field col s12 left">
+        <%= f.submit nil, :class => 'button radius' %></div>
 
   </div>
+
 </div>
 
-<!-- <div class="input-field col s12">
-
-   <input type="checkbox" id="<%=:active%>" />
-<label for="<%=:active%>">Active</label>
-</input>
-    </div>
- -->
-<div class="input-field col s12 container">
-    <div class="form-actions">
 
 
-      <%= f.submit nil, :class => 'button radius' %>
     </br>
       <%= link_to 'Cancel', addresses_path, :class => 'button alert radius' %>
-    </div>
-  </div>
+    
   </fieldset>
 <% end %>
 </div>

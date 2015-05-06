@@ -4,12 +4,15 @@
             <div class="card-content black-text">
 <table class="bordered hoverable">
 
+  <% if @cartitems.empty? %>
+  <h4>Cart is empty </h4>
+  <%=link_to "What are you waiting for? Click here to browse our goods", items_path%>
+  <%else%>
+
 <h4>Cart Items </h4>
   <thead>
     <tr>
-      <% unless current_user.role?(:customer) %>
-        <th>Customer</th>
-      <% end %>
+ 
       <th>Item Name</th>
       <th>Quantity?</th>
       <th>Price</th>
@@ -27,18 +30,24 @@
 
 
 
-         <td> <%= orderitem.item.current_price%> </td>
-
-                           <td><%=@totalcost%></td>
+         <td> $<%= orderitem.item.current_price%> </td>
 
 
-                          <td> <%=link_to "Checkout", place_order_path%> </td>
 
       
       </tr>
     <% end %>
+
+
+
+    <%end%>
   </tbody>
+
 </table>
+        <tr><%=@totalcost%>   </tr>
+        <tr> <%=link_to "Checkout", place_order_path%> </tr>
+
+
 </div>
 </div>
 </div>
