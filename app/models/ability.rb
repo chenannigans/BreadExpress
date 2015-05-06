@@ -11,6 +11,7 @@ class Ability
       can :edit, OrderItem
       can :create, Order
       can :create, Customer
+      can :edit, Customer
       can :create, Address
       can :edit, Address
       can :read, :all

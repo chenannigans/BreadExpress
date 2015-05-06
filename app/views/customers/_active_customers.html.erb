@@ -11,18 +11,24 @@
   <table class="bordered hoverable">
     <thead>
       <tr>
-        <th width="225">Name</th>
-        <th width="125">Phone</th>
-        <th width="200">Email</th>
+        <th width>Name</th>
+        <th width>Phone</th>
+        <th width>Email</th>
       </tr>
     </thead>
     <tbody>
+
+     
       <% @active_customers.each do |customer| %>
         <tr>
           <td><%= link_to customer.name, customer_path(customer) %></td>
           <td><%= number_to_phone customer.phone %></td>
           <td><%= mail_to customer.email, customer.email, encode: "javascript"  %></td>
+           <td>  <%= link_to(edit_customer_path(customer), class: 'button tiny radius warning') do %>
+                 &nbsp;Edit&nbsp;</td>
       </tr>
+
+   <%end%>
       <% end %>
     </tbody>
   </table>

@@ -8,7 +8,6 @@ Available Items
 <% else %>
   <h4> Items</h4>
 
-<%row = 1 %>
     <div class = "card">
 
       <% @active_items.each do |item| %>
@@ -56,10 +55,12 @@ Available Items
   <% end %>
 
 
-  <%= will_paginate @active_items, previous_label: "Previous&nbsp;", next_label: "&nbsp;Next" %>  
       <% end %>
+
     </div>
   </div>
+    <%= will_paginate @active_items, previous_label: "Previous&nbsp;", next_label: "&nbsp;Next" %>  
+
 </div>
 
 </div>

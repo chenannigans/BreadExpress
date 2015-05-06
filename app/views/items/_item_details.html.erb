@@ -19,17 +19,17 @@
 </div>
 </div>
 
-   <div class="row">
+   <div class="row col s6">
 
 <h3><%= @item.name%></h3>
 
-<h4>$<%= @item.current_price %></h4>
-<p>
+<h4><%= number_to_currency @item.current_price %></h4>
+
   <%= @item.description %>
 
-</p>
 
-<p>
+</br>
+
  <% if (@item.category == "bread") %>
                  <td>  <%= @item.units_per_item.to_s + " " + "loaf" %> per order.</td>
               <%else%>
@@ -45,16 +45,12 @@
         <td>
 
           <% if current_user.role?(:admin) || current_user.role?(:customer) %>
-          <p><div class = "row left">
+          <p><div class = "row right">
            <a class="waves-effect waves-dark btn red darken-4 right"<%=link_to "add to cart", add_to_cart_path(@item.id), :method => :post%></a> <td> </p>
          </div>
          <%end%>
 
-<p>
- 
-</p>
 
-<p>
 <!--   <b>Active</b>: <%= @item.active ? 'Yes' : 'No' %>
  --></p>
 </div>
