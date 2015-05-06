@@ -1,7 +1,10 @@
+ 
+
  <div class="row">
         <div class="col s10 offset-s1">
+          
 
-          <% if current_user.role?(:admin)%>
+          <% if current_user.role?(:admin)%>  
               <%if @active_items.empty?%>
                   <h4> No active items at this time </h4>
 
@@ -11,9 +14,17 @@
 
 
 
-          <h4>Bread Express Catalogue</h4>
+        <div class = "row">  <h4>Bread Express Catalogue</h4>
+          <% if current_user.role?(:admin)%>  
+   
+          <a class="waves-effect waves-dark btn red darken-4 left" <%= link_to 'New Item', new_item_path %> </a>
+           <%end%>
+        </div>
+
 
 <% for item in @active_items %>
+
+   
 
  <div class = "row">
 

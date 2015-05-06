@@ -8,6 +8,11 @@
   <h4>No active customers at this time.</h4>
 <% else %>
   <h4>Active Customers</h4>
+  <% if current_user.role?(:admin)%>  
+
+
+          <a class="waves-effect waves-dark btn red darken-4" <%= link_to 'New Customer', new_customer_path %> </a>
+           <%end%>
   <table class="bordered hoverable">
     <thead>
       <tr>

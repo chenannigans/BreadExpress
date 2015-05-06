@@ -10,7 +10,12 @@
 <% else %>
 
 
-<h3><%= state.capitalize %> Addresses</h3>
+<h4><%= state.capitalize %> Addresses</h4>
+<% if current_user.role?(:admin)%>  
+
+
+          <a class="waves-effect waves-dark btn red darken-4" <%= link_to 'New Address', new_address_path %> </a>
+           <%end%>
 <table class="bordered hoverable">
   <thead>
     <tr>
