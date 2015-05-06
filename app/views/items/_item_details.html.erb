@@ -1,10 +1,7 @@
  <div class="row">
         <div class="col s8 offset-s2">
 
-<%if current_user.role?(:admin)%>
 
-  <a class="waves-effect waves-dark btn red darken-4 right" <%= link_to 'EDIT', edit_item_path(@item) %> </a>
-  <%end%>
 
 <div class = " col s6">
 
@@ -49,6 +46,13 @@
            <a class="waves-effect waves-dark btn red darken-4 right"<%=link_to "add to cart", add_to_cart_path(@item.id), :method => :post%></a> <td> </p>
          </div>
          <%end%>
+
+          <div class = "col 6 left">
+          <%if current_user.role?(:admin)%>
+
+  <a class="waves-effect waves-dark btn red darken-4 right" <%= link_to 'EDIT', edit_item_path(@item) %> </a>
+  <%end%>
+          </div>
 
 
 <!--   <b>Active</b>: <%= @item.active ? 'Yes' : 'No' %>
