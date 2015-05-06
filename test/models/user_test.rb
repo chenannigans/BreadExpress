@@ -60,6 +60,10 @@ class UserTest < ActiveSupport::TestCase
       deny @baker.role?(:admin)
     end
 
+     should "have working class method for authenication" do 
+        User.authenticate("admin@example.com", "secret")
+    end
+
     should "have a working scope called active" do
       assert_equal ["baker","mark","shipper","tank"], User.active.all.map(&:username).sort
     end

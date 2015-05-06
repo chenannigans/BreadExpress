@@ -75,6 +75,11 @@ class AddressTest < ActiveSupport::TestCase
       assert @alexe_a1.valid?
     end
 
+    should "check that recipient and address string works" do
+      assert_equal @alexe_a1.recipient_and_address, "Alex Egan : 5000 Forbes Avenue"
+
+    end
+
     should "not make inactive because of an improper edit" do
       assert @alexe_a1.active
       @alexe_a1.street_1 = nil
