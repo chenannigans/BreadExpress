@@ -15,7 +15,8 @@ class OrdersController < ApplicationController
       @all_orders = Order.chronological.paginate(:page => params[:page]).per_page(5)
 
     elsif logged_in? && current_user.role?(:baker)
-     
+           @pending_orders = Order.not_shipped.chronological.paginate(:page => params[:page]).per_page(5)
+
       @bread_baking_list = create_baking_list_for("bread")
       @muffins_baking_list = create_baking_list_for("muffins")
 

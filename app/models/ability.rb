@@ -41,6 +41,7 @@ class Ability
       can :create, OrderItem
 
       can :read, Order
+      can :create, Order
 
       can :add_to_cart, Item
       can :remove_from_cart, Item
@@ -53,7 +54,7 @@ class Ability
       can :read, Item
       can :show, Item
 
-      
+
 
       can :read, Address
       can :edit, Address

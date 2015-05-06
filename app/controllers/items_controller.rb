@@ -28,10 +28,7 @@ include BreadExpressHelpers::Cart
     if current_user.nil? || current_user.role?(:customer)
       @similar_items = Item.for_category(@item.category)
     end
-    #   @items = current_user.customer.orders.chronological.to_a
-    # else
-    #   @previous_orders = @order.customer.orders.chronological.to_a
-    # end
+ 
   end
 
   def new
